@@ -1,0 +1,9 @@
+transformers
+torch
+torchvision
+torchaudio
+pillow
+soundfile
+librosa
+sentencepiece
+sacremoses
