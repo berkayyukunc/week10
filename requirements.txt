@@ -7,3 +7,4 @@ soundfile
 librosa
 sentencepiece
 sacremoses
+gradio
