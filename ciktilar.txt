@@ -1,0 +1,150 @@
+
+================================================================================
+  1. SENTIMENT ANALYSIS
+================================================================================
+
+Analyzing sentences:
+
+  Input:  "I've been waiting for a EE471 course my whole life."
+  Label:  NEGATIVE
+  Score:  0.9910
+
+  Input:  "I hate EE471 course"
+  Label:  NEGATIVE
+  Score:  0.9993
+
+================================================================================
+  2. ZERO-SHOT CLASSIFICATION
+================================================================================
+
+  Input:  "Berkshire keeps their cash reserves at an extremely high level."
+  Labels: ['finance', 'politics', 'technology', 'sports', 'health']
+
+  Results:
+    finance      -> 0.8900
+    technology   -> 0.0452
+    health       -> 0.0332
+    sports       -> 0.0173
+    politics     -> 0.0143
+
+================================================================================
+  3. TEXT GENERATION
+================================================================================
+
+  Prompt: "If I continue to successfully complete all in-class exercises in EE471 course,"
+  Max Length: 35 words | Alternatives: 2
+
+  Alternative 1:
+    If I continue to successfully complete all in-class exercises in EE471 course, I will be able to do my first attempt at EE471 at home.
+
+I will also be able to receive a new copy of the EE471 course when I enroll
+
+  Alternative 2:
+    If I continue to successfully complete all in-class exercises in EE471 course, I will be credited with completing the corresponding EE471 EITC or EE471 Training course or further EE471, respectively.
+
+5.5.8.4.
+
+
+================================================================================
+  4. FILL-MASK
+================================================================================
+
+  Input: "To understand generative AI, one must study <mask> well."
+
+  Top 5 predictions:
+    1. "AI" (score: 0.5665)
+       -> To understand generative AI, one must study AI well.
+    2. "it" (score: 0.0640)
+       -> To understand generative AI, one must study it well.
+    3. "them" (score: 0.0356)
+       -> To understand generative AI, one must study them well.
+    4. "algorithms" (score: 0.0271)
+       -> To understand generative AI, one must study algorithms well.
+    5. "very" (score: 0.0197)
+       -> To understand generative AI, one must study very well.
+
+================================================================================
+  5. NAMED ENTITY RECOGNITION (NER)
+================================================================================
+
+  Input: "I am Nate, a research assistant in Izmir Institute of Technology, and currently living and working in beautiful city İzmir in Türkiye."
+
+  Extracted Entities:
+    [PER ] Nate                           (score: 0.9994)
+    [ORG ] Izmir Institute of Technology  (score: 0.9467)
+    [LOC ] İzmir                          (score: 0.9985)
+    [LOC ] Tü                             (score: 0.5870)
+    [MISC] ##rk                           (score: 0.5089)
+    [LOC ] ##iye                          (score: 0.6302)
+
+  Summary:
+    Person:       Nate
+    Organization: Izmir Institute of Technology
+    Location:     İzmir, Tü, ##iye
+
+================================================================================
+  6. QUESTION ANSWERING (Validating NER Results)
+================================================================================
+
+  Context: "I am Nate, a research assistant in Izmir Institute of Technology, and currently living and working in beautiful city İzmir in Türkiye."
+
+  Validation via Q&A:
+
+    Q: What is the name of the person?
+    A: Nate (score: 0.9968)
+
+    Q: Which organization does the person work at?
+    A: Izmir Institute of Technology (score: 0.9642)
+
+    Q: Where does the person live?
+    A: İzmir in Türkiye (score: 0.5194)
+
+    Q: In which country does the person live?
+    A: Izmir (score: 0.2288)
+
+================================================================================
+  7. TEXT SUMMARIZATION
+================================================================================
+
+  Original Text (85 words):
+    The 2008 Global Financial Crisis stands as the most severe economic collapse of the 21st century, often compared to the Great Depression of the 1930s. Triggered by the bursting of the United States housing bubble, its effects rippled across the globe, leading to the collapse of major financial institutions and a deep international recession. The crisis began with the subprime mortgage market. In the early 2000s, low interest rates and a push for homeownership led banks to issue high-risk loans to borrowers with poor credit.
+
+  Summary (43 words):
+     The 2008 Global Financial Crisis stands as the most severe economic collapse of the 21st century . Triggered by the bursting of the United States housing bubble, its effects rippled across the globe . The crisis began with the subprime mortgage market .
+
+================================================================================
+  8. TRANSLATION (English -> Turkish)
+================================================================================
+
+  Original (EN): "The 2008 Global Financial Crisis stands as the most severe economic collapse of the 21st century, often compared to the Great Depression."
+
+  Translation (TR): "2008 Küresel Finansal Krizi, 21. yüzyılın en şiddetli ekonomik çöküşü olarak, genellikle Büyük Buhran ile karşılaştırıldığında durmaktadır."
+
+================================================================================
+  9. IMAGE CLASSIFICATION (google/vit-base-patch16-224)
+================================================================================
+
+  Image URL: https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/pipeline-cat-chonk.jpeg
+
+  Classification Results (Top 5):
+    1. lynx, catamount                                    (score: 0.4403)
+    2. cougar, puma, catamount, mountain lion, painter, panther, Felis concolor (score: 0.0343)
+    3. snow leopard, ounce, Panthera uncia                (score: 0.0321)
+    4. Egyptian cat                                       (score: 0.0235)
+    5. tiger cat                                          (score: 0.0230)
+
+================================================================================
+  10. AUTOMATIC SPEECH RECOGNITION (openai/whisper-large-v3)
+================================================================================
+
+  Audio URL: https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac
+
+  Transcription:
+    " I have a dream that one day this nation will rise up and live out the true meaning of its creed."
+
+================================================================================
+  ALL TASKS COMPLETED SUCCESSFULLY
+================================================================================
+
+  EE471 Week 10 - Task 1: All 10 subtasks executed.
+
